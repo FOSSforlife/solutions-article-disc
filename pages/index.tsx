@@ -1,47 +1,27 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
-import Section from '../components/Section/Section';
+import PastDiscussions from '../components/PastDiscussions';
 
 const Home: NextPage = () => {
-	const sections: Array<any> = [
-		{
-			title: 'Vox',
-			type: 'text',
-			column: 1,
-			url: 'https://www.vox.com/rss/index.xml',
-			htmlUrl: 'https://www.vox.com',
-			color: 'yellow-100',
-		},
-		{
-			title: 'David Pakman Show',
-			type: 'youtube',
-			column: 1,
-			playlistId: 'PLVrg5xLmCvhG93P29d04-Qu_M7-z3W_jB',
-			htmlUrl: 'https://www.vox.com',
-			color: 'blue-100',
-		},
-		// {
-		// 	title: 'News 2',
-		// 	type: 'text',
-		// 	column: 1,
-		// },
-		// {
-		// 	title: 'News 3',
-		// 	type: 'text',
-		// 	column: 1,
-		// },
-	];
-
 	return (
-		<div className="m-5">
+		<div className="mx-auto my-5 max-w-xl text-center">
 			<Head>
-				<title>News Dashboard</title>
-				<meta name="description" content="Personal news dashboard, created by FOSSforlife" />
+				<title>Article Discussions</title>
+				<meta name="description" content="Solutions Article Discussions" />
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 
-			<main>
+			<h1 className="text-2xl">Article Discussions</h1>
+			<p>
+				This is a weekly discussion group where we vote on an interesting article to read and have an open-ended
+				discussion on what we&apos;ve learned from it and how it applies to our lives.
+			</p>
+
+			<div className="h-10"></div>
+
+			<PastDiscussions />
+			{/* <main>
 				<div className="grid grid-cols-3 gap-4">
 					<div className="div">
 						{sections
@@ -65,7 +45,7 @@ const Home: NextPage = () => {
 							))}
 					</div>
 				</div>
-			</main>
+			</main> */}
 
 			<footer></footer>
 		</div>
