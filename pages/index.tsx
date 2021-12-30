@@ -2,8 +2,20 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
 import PastDiscussions from '../components/PastDiscussions';
+import clientPromise from '../lib/mongodb';
 
-const Home: NextPage = () => {
+export async function getServerSideProps() {
+	const db = (await clientPromise).db('articles');
+	const articles = await db.collection('articles').find({}).sort({ date: -1 }).limit(200).toArray();
+	console.log(articles);
+	return {
+		props: {
+			articles: JSON.parse(JSON.stringify(articles)),
+		},
+	};
+}
+
+const Home: NextPage = ({ articles }: any) => {
 	return (
 		<div className="mx-auto my-5 max-w-xl text-center">
 			<Head>
@@ -20,33 +32,9 @@ const Home: NextPage = () => {
 
 			<div className="h-10"></div>
 
-			<PastDiscussions />
-			{/* <main>
-				<div className="grid grid-cols-3 gap-4">
-					<div className="div">
-						{sections
-							.filter((s) => s.column === 0)
-							.map((section, sectionIndex) => (
-								<Section key={sectionIndex} section={section} />
-							))}
-					</div>
-					<div className="div">
-						{sections
-							.filter((s) => s.column === 1)
-							.map((section, sectionIndex) => (
-								<Section key={sectionIndex} section={section} />
-							))}
-					</div>
-					<div className="div">
-						{sections
-							.filter((s) => s.column === 2)
-							.map((section, sectionIndex) => (
-								<Section key={sectionIndex} section={section} />
-							))}
-					</div>
-				</div>
-			</main> */}
+			<PastDiscussions articles={articles} />
 
+			{/* TODO: Footer with some Solutions links */}
 			<footer></footer>
 		</div>
 	);
