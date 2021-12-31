@@ -41,7 +41,7 @@ const Home: NextPage = ({ articles }: any) => {
 						Discord server!
 					</a>{' '}
 					For more info, check out our{' '}
-					<a className="text-blue-600 visited:text-purple-600" href="https://medium.com/solutions">
+					<a className="text-blue-600 visited:text-purple-600" href="https://medium.com/solutions/introducing-article-discussions-42debdaa42f6">
 						announcement
 					</a>
 					.

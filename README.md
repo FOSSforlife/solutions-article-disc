@@ -1,4 +1,4 @@
-Website for Solutions Article Discussions. For more info, see the [announcement article](https://medium.com/solutions).
+Website for Solutions Article Discussions. For more info, see the [announcement article](https://medium.com/solutions/introducing-article-discussions-42debdaa42f6).
 
 Made with Next.js, TypeScript, Tailwind, and MongoDB.
 
