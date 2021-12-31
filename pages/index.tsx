@@ -6,6 +6,7 @@ import Image from 'next/image';
 import SolutionsBlack from '../public/solutions-black.png';
 import SolutionsWhite from '../public/solutions-white.png';
 import { SocialIcon } from 'react-social-icons';
+import Footer from '../components/Footer';
 
 export async function getServerSideProps() {
 	const db = (await clientPromise).db('articles');
@@ -38,32 +39,21 @@ const Home: NextPage = ({ articles }: any) => {
 					If you&apos;d like to be a part of it, join our{' '}
 					<a className="text-blue-600 visited:text-purple-600" href="https://discord.io/solutoins">
 						Discord server!
+					</a>{' '}
+					For more info, check out our{' '}
+					<a className="text-blue-600 visited:text-purple-600" href="https://medium.com/solutions">
+						announcement
 					</a>
+					.
 				</p>
 			</main>
 			<div className="h-10"></div>
 
 			<PastDiscussions articles={articles} />
 
-			<footer className="mt-20 text-right max-w-l">
-				<div className="m-2">
-					<Image src={SolutionsBlack} layout="fixed" width={214} height={30} alt="Solutions"></Image>
-				</div>
-				<div className="m-2 space-x-2.5 text-right">
-					<SocialIcon style={{ height: 30, width: 30 }} bgColor="#777" url="https://medium.com/solutions" />
-					<SocialIcon style={{ height: 30, width: 30 }} bgColor="#777" url="https://facebook.com/solnspodcast" />
-					<SocialIcon style={{ height: 30, width: 30 }} bgColor="#777" url="https://instagram.com/solnspodcast" />
-					<SocialIcon style={{ height: 30, width: 30 }} bgColor="#777" url="https://reddit.com/r/solutionspodcast" />
-					<SocialIcon style={{ height: 30, width: 30 }} bgColor="#777" url="https://twitter.com/solnspodcast" />
-					<SocialIcon style={{ height: 30, width: 30 }} bgColor="#777" url="https://discord.io/solutions" />
-				</div>
-			</footer>
+			<Footer />
 		</div>
 	);
-	{
-		/* 1128 228 */
-		// 1070 150
-	}
 };
 
 export default Home;
