@@ -27,7 +27,7 @@ export default function Footer(): ReactElement {
 				<SocialIcon
 					style={{ height: 30, width: 30 }}
 					bgColor="#777"
-					url="https://github.com/FOSSforlife/solutions-article-disc"
+					url="https://github.com/solutions-podcast/article-disc-site"
 				/>
 				<SocialIcon style={{ height: 30, width: 30 }} bgColor="#777" url="https://discord.io/solutions" />
 			</div>
